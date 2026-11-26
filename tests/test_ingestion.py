@@ -13,4 +13,4 @@ def test_unsupported_format(tmp_path):
     file = tmp_path/"sensor.txt"
     file.write_text("temperature,pressure\n25,100")
     with pytest.raises(ValueError):
-        read_file()
+        read_file(tmp_path)
