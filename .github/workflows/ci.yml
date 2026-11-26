@@ -1,0 +1,26 @@
+name: manufacturing pipeline CI
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+
+      - name: install uv
+        uses: astral-sh/setup-uv@v6
+        
+      - name: Install Python
+        run: uv python install
+
+      - name: Install dependencies
+        run: uv sync --locked
+
+      - name: Run tests
+        run: uv run python -m pytest
+
+on:
+    push:
+      branches: [main]
+    pull_request:
+      branches: [main]
