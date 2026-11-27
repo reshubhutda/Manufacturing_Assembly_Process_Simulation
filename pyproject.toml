@@ -5,8 +5,10 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+    "boto3>=1.44.12",
     "numpy>=2.2.6",
     "pandas>=2.3.3",
+    "watchdog>=6.0.0",
 ]
 
 [dependency-groups]
